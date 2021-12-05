@@ -1,10 +1,62 @@
-:root {}
+:root {
+  --color__01: darkblue;
+  --color__02: yellow;
+}
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: black;
-  color: yellow;
+  font-family: 'Changa', sans-serif;
+  margin: 1em;
+  background-color: var(--color__01);
+  color: var(--color__02);
+}
+
+ol {
+  font-size: 1.08em;
+  line-height: 1.8em;
+  display: inline-block;
+}
+
+.page-header {
+  text-align: center;
+}
+
+.page-header__logo {
+  max-width: 280px;
+}
+
+.page-title {
+  font-family: 'Sedgwick Ave Display', cursive;
+  color: var(--color__02);
+}
+
+.main-content {
+  background-color: var(--color__02);
+  color: var(--color__01);
+  font-weight: 400;
+  margin: 0 auto;
+  padding: 5px 10px;
+  max-width: 1000px;
+}
+
+@media all and (max-width: 500px) {
+  body {
+    margin: 20px;
+  }
+
+  .page-header__logo {
+    max-width: 70%;
+    min-width: 100px;
+  }
+
+  .page-title {
+    font-size: 25px;
+  }
+
+  .main-content {
+    font-size: smaller;
+  }
 }
