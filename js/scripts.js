@@ -1,3 +1,5 @@
+// Define pokemonList array with single Pokémon objects
+
 let pokemonList = [{
   name: 'Bulbasaur',
   height: 0.7,
@@ -79,3 +81,18 @@ let pokemonList = [{
   weight: 1.8,
   types: ['flying', 'normal']
 }];
+
+// Create ordered list of pokemonList array objects
+// Add if else statements for indicating weight categories
+
+document.write('<div class="main-content"><ol>');
+for (let i = 0; i < pokemonList.length; i++) {
+  if (pokemonList[i].weight > 30) {
+    document.write('<li>' + pokemonList[i].name + ' (' + 'weight: ' + pokemonList[i].weight + 'kg)' + ' – OMG! That\'s a massive one. Beware: The mighty ' + pokemonList[i].name + ' is heavier than 30kg!' + '</li>');
+  } else if ((pokemonList[i].weight >= 10) && (pokemonList[i].weight <= 30)) {
+    document.write(`<li>${pokemonList[i].name} (weight: ${pokemonList[i].weight} kg) – WOW! The ${pokemonList[i].name} has a medium weight of 10-30kg.</li>`);
+  } else {
+    document.write(`<li>${pokemonList[i].name} (weight: ${pokemonList[i].weight} kg)</li>`);
+  }
+}
+document.write('</ol></div>');
