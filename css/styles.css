@@ -1,6 +1,7 @@
 :root {
   --color__01: darkblue;
-  --color__02: yellow;
+  --color__02: #ffe23c;
+  --bg-color__01: radial-gradient(circle at 50% 120.71%, #503460 0, #43295d 25%, #321f59 50%, #1c1656 75%, #000f53 100%);
 }
 
 * {
@@ -10,7 +11,7 @@
 body {
   font-family: 'Changa', sans-serif;
   margin: 1em;
-  background-color: var(--color__01);
+  background-image: var(--bg-color__01);
   color: var(--color__02);
 }
 
@@ -24,22 +25,29 @@ ol {
   text-align: center;
 }
 
-.page-header__logo {
-  max-width: 280px;
+.page-header__logo-1 {
+  max-width: 250px;
+}
+
+.page-header__logo-2 {
+  max-width: 250px;
 }
 
 .page-title {
   font-family: 'Sedgwick Ave Display', cursive;
   color: var(--color__02);
+  font-size: 1.4em;
+  margin: 8px 6px 0px;
 }
 
 .main-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 5px 10px;
+  border-radius: 30px;
   background-color: var(--color__02);
   color: var(--color__01);
   font-weight: 400;
-  margin: 0 auto;
-  padding: 5px 10px;
-  max-width: 1000px;
 }
 
 @media all and (max-width: 500px) {
@@ -47,16 +55,22 @@ ol {
     margin: 20px;
   }
 
-  .page-header__logo {
+  .page-header__logo-1 {
+    max-width: 70%;
+    min-width: 100px;
+  }
+
+  .page-header__logo-2 {
     max-width: 70%;
     min-width: 100px;
   }
 
   .page-title {
-    font-size: 25px;
+    font-size: 15px;
   }
 
   .main-content {
+    border-radius: 18px;
     font-size: smaller;
   }
 }
