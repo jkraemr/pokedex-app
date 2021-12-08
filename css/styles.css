@@ -19,6 +19,7 @@ ol {
   font-size: 1.08em;
   line-height: 1.8em;
   display: inline-block;
+  list-style: hiragana;
 }
 
 .page-header {
