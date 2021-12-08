@@ -99,12 +99,27 @@ let pokemonList = [{
 
 // document.write('</ol></div>');
 
-// Create ordered list of pokemonList array objects with *forEach* function
-// Add if else statements for indicating weight categories
+// Create ordered list of pokemonList array objects with *forEach* function executing if else statements for indicating weight categories
+
+// document.write('<div class="main-content"><ol>');
+//
+// pokemonList.forEach(function(item) {
+//   if (item.weight > 30) {
+//     document.write('<li>' + item.name + ' (' + 'weight: ' + item.weight + 'kg)' + ' – OMG! That\'s a massive one. Beware: The mighty ' + item.name + ' is heavier than 30kg!' + '</li>');
+//   } else if ((item.weight >= 10) && (item.weight <= 30)) {
+//     document.write(`<li>${item.name} (weight: ${item.weight} kg) – WOW! The ${item.name} has a medium weight of 10-30kg.</li>`);
+//   } else {
+//     document.write(`<li>${item.name} (weight: ${item.weight} kg)</li>`);
+//   }
+// });
+//
+// document.write('</ol></div>');
+
+// Create ordered list of pokemonList array objects with *forEach* function where myLoopfunction is just a regular function that expects the *item* parameter and writes its details via if else statements for indicating weight categories
 
 document.write('<div class="main-content"><ol>');
 
-pokemonList.forEach(function(item) {
+function myLoopfunction(item) {
   if (item.weight > 30) {
     document.write('<li>' + item.name + ' (' + 'weight: ' + item.weight + 'kg)' + ' – OMG! That\'s a massive one. Beware: The mighty ' + item.name + ' is heavier than 30kg!' + '</li>');
   } else if ((item.weight >= 10) && (item.weight <= 30)) {
@@ -112,6 +127,8 @@ pokemonList.forEach(function(item) {
   } else {
     document.write(`<li>${item.name} (weight: ${item.weight} kg)</li>`);
   }
-});
+}
+
+pokemonList.forEach(myLoopfunction);
 
 document.write('</ol></div>');
