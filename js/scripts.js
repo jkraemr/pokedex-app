@@ -83,6 +83,19 @@ let pokemonRepository = (function() {
     types: ['flying', 'normal']
   }];
 
+  function getAll() {
+    return pokemonList;
+  }
+
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
+
+  return {
+    getAll: getAll,
+    add: add
+  }
+
 })();
 
 // Create ordered list of pokemonList array objects with *for* loop
