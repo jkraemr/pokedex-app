@@ -1,4 +1,4 @@
-// Create pokemonRepository variable to wrap pokemonList array in IIFE with return object for public functions *getAll* and *add*
+// Create pokemonRepository variable to wrap pokemonList array in IIFE with return object for public functions *getAll* and *add*.
 
 let pokemonRepository = (function() {
   let pokemonList = [{
@@ -88,9 +88,13 @@ let pokemonRepository = (function() {
   }
 
   function add(pokemon) {
-    pokemonList.push(pokemon);
+    if (
+      (typeof pokemon === 'object') && ((Object.keys(pokemonList[0])) !== (Object.keys(pokemon)))) {
+      console.log(Object.keys(pokemonList[0]));
+      console.log(Object.keys(pokemon));
+      pokemonList.push(pokemon);
+    }
   }
-
   return {
     getAll: getAll,
     add: add
@@ -98,11 +102,18 @@ let pokemonRepository = (function() {
 
 })();
 
-// Create ordered list of pokemonList array objects with *forEach* function where myLoopfunction is just a regular function that expects the *item* parameter and writes its details via if else statements for indicating weight categories
+pokemonRepository.add({
+  name: 'Pidgeotto',
+  height: 1.1,
+  weight: 30,
+  types: ['flying', 'normal']
+});
+
+// Create ordered list of Pokemons with *forEach* loop function to iterate over each object within the pokemonList array. *myLoopFunction* expects the *item* parameter and writes its details via *if else* statements to indicate weight categories.
 
 document.write('<div class="main-content"><ol>');
 
-function myLoopfunction(item) {
+function myLoopFunction(item) {
   if (item.weight > 30) {
     document.write('<li>' + item.name + ' (' + 'weight: ' + item.weight + 'kg)' + ' – OMG! That\'s a massive one. Beware: The mighty ' + item.name + ' is heavier than 30kg!' + '</li>');
   } else if ((item.weight >= 10) && (item.weight <= 30)) {
@@ -112,6 +123,6 @@ function myLoopfunction(item) {
   }
 }
 
-pokemonRepository.getAll().forEach(myLoopfunction);
+pokemonRepository.getAll().forEach(myLoopFunction);
 
 document.write('</ol></div>');
