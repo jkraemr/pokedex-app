@@ -98,28 +98,28 @@ let pokemonRepository = (function() {
 
 })();
 
-// Create ordered list of pokemonList array objects with *for* loop
-// Add if else statements for indicating weight categories
-
-// document.write('<div class="main-content"><ol>');
-
-// for (let i = 0; i < pokemonList.length; i++) {
-//   if (pokemonList[i].weight > 30) {
-//     document.write('<li>' + pokemonList[i].name + ' (' + 'weight: ' + pokemonList[i].weight + 'kg)' + ' – OMG! That\'s a massive one. Beware: The mighty ' + pokemonList[i].name + ' is heavier than 30kg!' + '</li>');
-//   } else if ((pokemonList[i].weight >= 10) && (pokemonList[i].weight <= 30)) {
-//     document.write(`<li>${pokemonList[i].name} (weight: ${pokemonList[i].weight} kg) – WOW! The ${pokemonList[i].name} has a medium weight of 10-30kg.</li>`);
-//   } else {
-//     document.write(`<li>${pokemonList[i].name} (weight: ${pokemonList[i].weight} kg)</li>`);
-//   }
-// }
-
-// document.write('</ol></div>');
-
-// Create ordered list of pokemonList array objects with *forEach* function executing if else statements for indicating weight categories
-
+// // Create ordered list of pokemonList array objects with *for* loop
+// // Add if else statements for indicating weight categories
+//
 // document.write('<div class="main-content"><ol>');
 //
-// pokemonList.forEach(function(item) {
+// for (let i = 0; i < pokemonRepository.getAll().length; i++) {
+//   if (pokemonRepository.getAll()[i].weight > 30) {
+//     document.write('<li>' + pokemonRepository.getAll()[i].name + ' (' + 'weight: ' + pokemonRepository.getAll()[i].weight + 'kg)' + ' – OMG! That\'s a massive one. Beware: The mighty ' + pokemonRepository.getAll()[i].name + ' is heavier than 30kg!' + '</li>');
+//   } else if ((pokemonRepository.getAll()[i].weight >= 10) && (pokemonRepository.getAll()[i].weight <= 30)) {
+//     document.write(`<li>${pokemonRepository.getAll()[i].name} (weight: ${pokemonRepository.getAll()[i].weight} kg) – WOW! The ${pokemonRepository.getAll()[i].name} has a medium weight of 10-30kg.</li>`);
+//   } else {
+//     document.write(`<li>${pokemonRepository.getAll()[i].name} (weight: ${pokemonRepository.getAll()[i].weight} kg)</li>`);
+//   }
+// }
+//
+// document.write('</ol></div>');
+
+// // Create ordered list of pokemonList array objects with *forEach* function executing if else statements for indicating weight categories
+//
+// document.write('<div class="main-content"><ol>');
+//
+// pokemonRepository.getAll().forEach(function(item) {
 //   if (item.weight > 30) {
 //     document.write('<li>' + item.name + ' (' + 'weight: ' + item.weight + 'kg)' + ' – OMG! That\'s a massive one. Beware: The mighty ' + item.name + ' is heavier than 30kg!' + '</li>');
 //   } else if ((item.weight >= 10) && (item.weight <= 30)) {
@@ -145,6 +145,6 @@ function myLoopfunction(item) {
   }
 }
 
-pokemonList.forEach(myLoopfunction);
+pokemonRepository.getAll().forEach(myLoopfunction);
 
 document.write('</ol></div>');
