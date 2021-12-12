@@ -1,7 +1,9 @@
 :root {
   --color__01: darkblue;
   --color__02: #ffe23c;
+  --color__03: #386BB9;
   --bg-color__01: radial-gradient(circle at 50% 120.71%, #503460 0, #43295d 25%, #321f59 50%, #1c1656 75%, #000f53 100%);
+  --bg-color__02: rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -15,11 +17,15 @@ body {
   color: var(--color__02);
 }
 
-ol {
+ol, ul {
   font-size: 1.08em;
   line-height: 1.8em;
+  /* display: inline-block; */
+  /* list-style: hiragana; */
+}
+
+li {
   display: inline-block;
-  list-style: hiragana;
 }
 
 .page-header {
@@ -42,13 +48,31 @@ ol {
 }
 
 .main-content {
-  max-width: 1000px;
+  width: 100%;
+  min-height: 800px;
   margin: 0 auto;
   padding: 5px 10px;
   border-radius: 30px;
-  background-color: var(--color__02);
+  /* background-image: var(--bg-color__01); */
   color: var(--color__01);
-  font-weight: 400;
+  text-align: center;
+}
+
+.button {
+  background-color: var(--color__02);
+  border: 3px solid var(--color__03);
+  border-radius: 45px;
+  margin: 19px;
+  padding: 33px;
+  color: var(--color__01);
+  cursor: pointer;
+  transition-duration: 0.08s;
+}
+
+.button:hover {
+  /* background-image: var(--bg-color__01); */
+  background-color: var(--bg-color__02);
+  color: var(--color__02);
 }
 
 @media all and (max-width: 500px) {

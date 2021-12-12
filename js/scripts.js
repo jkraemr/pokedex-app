@@ -1,5 +1,4 @@
-// Create pokemonRepository variable to wrap pokemonList array in IIFE with return object for public functions *getAll* and *add*.
-
+// Create IIFE to wrap pokemonList array with name, height, weight, and type properties
 let pokemonRepository = (function() {
   let pokemonList = [{
     name: 'Bulbasaur',
@@ -83,25 +82,52 @@ let pokemonRepository = (function() {
     types: ['flying', 'normal']
   }];
 
+  // Return pokemonList array
   function getAll() {
     return pokemonList;
   }
 
+  // Add new validated Pokemon object to end of pokemonList array
   function add(pokemon) {
-    if (
-      (typeof pokemon === 'object') && ((Object.keys(pokemonList[0])) !== (Object.keys(pokemon)))) {
-      console.log(Object.keys(pokemonList[0]));
-      console.log(Object.keys(pokemon));
+    if ((typeof pokemon === 'object') && ('name' in pokemon) && ('height' in pokemon) && ('weight' in pokemon)) {
       pokemonList.push(pokemon);
+    } else {
+      console.log('incomplete data set')
     }
   }
-  return {
-    getAll: getAll,
-    add: add
+
+  // Generate pokemonList items for document with clickable buttons in unordered list
+  function addListItem(pokemon) {
+    let pokeList = document.querySelector('.poke-list');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = (pokemon.name);
+    button.classList.add('button');
+    listItem.appendChild(button);
+    pokeList.appendChild(listItem);
+    button.addEventListener('click', function() {
+      showDetails(pokemon);
+    })
   }
 
+  // Log details of clicked pokemonList item to console
+  function showDetails(pokemon) {
+    console.log(pokemon);
+  }
+
+  //  Return pokemonList objects for public functions outside of IIFE (getAll, add, addListItem)
+  return {
+    getAll: getAll,
+    add: add,
+    addListItem: addListItem
+  }
+
+  // End of IIFE
 })();
 
+// Public functions
+
+// Add new object to pokemonList array within IIFE
 pokemonRepository.add({
   name: 'Pidgeotto',
   height: 1.1,
@@ -109,20 +135,7 @@ pokemonRepository.add({
   types: ['flying', 'normal']
 });
 
-// Create ordered list of Pokemons with *forEach* loop function to iterate over each object within the pokemonList array. *myLoopFunction* expects the *item* parameter and writes its details via *if else* statements to indicate weight categories.
-
-document.write('<div class="main-content"><ol>');
-
-function myLoopFunction(item) {
-  if (item.weight > 30) {
-    document.write('<li>' + item.name + ' (' + 'weight: ' + item.weight + 'kg)' + ' – OMG! That\'s a massive one. Beware: The mighty ' + item.name + ' is heavier than 30kg!' + '</li>');
-  } else if ((item.weight >= 10) && (item.weight <= 30)) {
-    document.write(`<li>${item.name} (weight: ${item.weight} kg) – WOW! The ${item.name} has a medium weight of 10-30kg.</li>`);
-  } else {
-    document.write(`<li>${item.name} (weight: ${item.weight} kg)</li>`);
-  }
-}
-
-pokemonRepository.getAll().forEach(myLoopFunction);
-
-document.write('</ol></div>');
+// Call addListItem function to render pokemonList items in document
+pokemonRepository.getAll().forEach(function(pokemon) {
+  pokemonRepository.addListItem(pokemon);
+});
