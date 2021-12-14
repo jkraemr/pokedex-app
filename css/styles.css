@@ -67,6 +67,7 @@ li {
   color: var(--color__01);
   cursor: pointer;
   transition-duration: 0.08s;
+  /* text-transform: capitalize; */
 }
 
 .button:hover {
