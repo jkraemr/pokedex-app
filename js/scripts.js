@@ -41,6 +41,7 @@ let pokemonRepository = (function() {
     console.log(pokemon);
   }
 
+  // Load Pokemon list from PokeAPI
   function loadList() {
     return fetch(apiUrl).then(function (response) {
       return response.json();
@@ -57,20 +58,20 @@ let pokemonRepository = (function() {
     })
   }
 
+  // Fetch Pokemon details from PokeAPI and assign image / weight / types details to objects in pokemonList
   function loadDetails(item) {
     let url = item.detailsUrl;
     return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
-      // Now we add the details to the item
       item.imageUrl = details.sprites.front_default;
-      item.height = details.height;
+      item.weight = details.weight;
       item.types = details.types;
     }).catch(function (e) {
       console.error(e);
     });
   }
-
+  // Log Pokemon details to console on click
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
       console.log(pokemon);
@@ -89,7 +90,7 @@ let pokemonRepository = (function() {
   // End of IIFE
 })();
 
-// Public functions
+// PUBLIC FUNCTIONS
 
 // // Add new object to pokemonList array within IIFE
 // pokemonRepository.add({
@@ -99,9 +100,9 @@ let pokemonRepository = (function() {
 //   types: ['flying', 'normal']
 // });
 
-// Call addListItem function to render pokemonList items in document
+// Call loadList function to load  okemon list via PokeAPI from IIFE
+// Call addListItem function to render pokemonList items in DOM
 pokemonRepository.loadList().then(function() {
-  // Now the data is loaded!
   pokemonRepository.getAll().forEach(function(pokemon){
     pokemonRepository.addListItem(pokemon);
   });
