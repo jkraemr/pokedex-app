@@ -43,9 +43,11 @@ let pokemonRepository = (function() {
 
   // Load Pokemon list from PokeAPI
   function loadList() {
+    showLoadingMessage();
     return fetch(apiUrl).then(function (response) {
       return response.json();
     }).then(function (json) {
+      hideLoadingMessage();
       json.results.forEach(function (item) {
         let pokemon = {
           name: item.name,
@@ -54,20 +56,24 @@ let pokemonRepository = (function() {
         add(pokemon);
       });
     }).catch(function (e) {
+      hideLoadingMessage();
       console.error(e);
     })
   }
 
   // Fetch Pokemon details from PokeAPI and assign image / weight / types details to objects in pokemonList
   function loadDetails(item) {
+    showLoadingMessage();
     let url = item.detailsUrl;
     return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
+      hideLoadingMessage();
       item.imageUrl = details.sprites.front_default;
       item.weight = details.weight;
       item.types = details.types;
     }).catch(function (e) {
+      hideLoadingMessage();
       console.error(e);
     });
   }
@@ -76,6 +82,19 @@ let pokemonRepository = (function() {
     loadDetails(pokemon).then(function () {
       console.log(pokemon);
     });
+  }
+
+  // Show loading message in document / console
+  function showLoadingMessage() {
+    document.getElementById("loader").style.visibility = "visible";
+    console.clear();
+    console.log('LOADING data from PokeAPI ...');
+  }
+
+  // Hide loading message in document / console
+  function hideLoadingMessage() {
+    setTimeout(() => {document.getElementById("loader").style.visibility = "hidden"}, 700);
+    setTimeout(() => {console.log("DONE: Loading data successful.")}, 700);
   }
 
   //  Return pokemonList objects for public functions outside of IIFE (getAll, add, addListItem)

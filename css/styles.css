@@ -4,6 +4,7 @@
   --color__03: #386BB9;
   --bg-color__01: radial-gradient(circle at 50% 120.71%, #503460 0, #43295d 25%, #321f59 50%, #1c1656 75%, #000f53 100%);
   --bg-color__02: rgba(0, 0, 0, 0.1);
+  --bg-color__03: aquamarine;
 }
 
 * {
@@ -45,6 +46,19 @@ li {
   color: var(--color__02);
   font-size: 1.4em;
   margin: 8px 6px 0px;
+}
+
+#loader {
+  background-color: var(--bg-color__03);
+  border-radius: 30px;
+  height: 30px;
+  color: var(--color__01);
+}
+
+#loader > p {
+  padding-top: 6px;
+  text-align: center;
+  font-weight: 500;
 }
 
 .main-content {
