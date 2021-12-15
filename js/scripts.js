@@ -93,8 +93,8 @@ let pokemonRepository = (function() {
 
   // Hide loading message in document / console
   function hideLoadingMessage() {
-    setTimeout(() => {document.getElementById("loader").style.visibility = "hidden"}, 700);
-    setTimeout(() => {console.log("DONE: Loading data successful.")}, 700);
+    setTimeout(() => {document.getElementById("loader").style.visibility = "hidden"}, 500);
+    setTimeout(() => {console.log("DONE: Loading data successful.")}, 1000);
   }
 
   //  Return pokemonList objects for public functions outside of IIFE (getAll, add, addListItem)

@@ -35,6 +35,7 @@ li {
 
 .page-header__logo-1 {
   max-width: 250px;
+  margin-top: 33px;
 }
 
 .page-header__logo-2 {
@@ -49,14 +50,16 @@ li {
 }
 
 #loader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   background-color: var(--bg-color__03);
-  border-radius: 30px;
-  height: 30px;
+  height: 40px;
   color: var(--color__01);
 }
 
 #loader > p {
-  padding-top: 6px;
   text-align: center;
   font-weight: 500;
 }
