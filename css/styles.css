@@ -5,6 +5,7 @@
   --bg-color__01: radial-gradient(circle at 50% 120.71%, #503460 0, #43295d 25%, #321f59 50%, #1c1656 75%, #000f53 100%);
   --bg-color__02: rgba(0, 0, 0, 0.1);
   --bg-color__03: aquamarine;
+  --bg-color__04: darkblue;
 }
 
 * {
@@ -58,6 +59,7 @@ li {
 
 #loader {
   position: fixed;
+  z-index: 500;
   top: 0;
   right: 0;
   left: 0;
@@ -92,7 +94,7 @@ li {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
-  z-index: 999;
+  z-index: 400;
   overflow: auto;
   text-align: center;
   display: none;
@@ -103,12 +105,14 @@ li {
 }
 
 .modal {
-  margin: auto;
+  margin: 10% auto;
   display: inline-block;
   box-sizing: border-box;
-  background: #fff;
+  background: #591ee1;
+  color: var(--color__02);
   padding: 15px;
   width: 100%;
+  height: 50%;
   max-width: 700px;
   text-align: left;
 }
@@ -125,6 +129,10 @@ li {
 .modal h1 {
   margin-top: 0;
   text-transform: capitalize;
+}
+
+button.modal-close {
+  color: #fff;
 }
 
 .button {

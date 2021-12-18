@@ -107,7 +107,13 @@ let pokemonRepository = (function() {
       imageElement.src = (pokemon.imageUrl);
 
       let weightElement = document.createElement('p');
-      weightElement.innerText = (`Beware! The mighty ${pokemon.name} weights ${pokemon.weight} kg!`);
+      if (pokemon.weight > 500) {
+        weightElement.innerText = (`OMG – That's a massive one. BEWARE: The mighty ${pokemon.name} weights ${pokemon.weight} kg!`);
+      } else if ((pokemon.weight <= 500) && (pokemon.weight >= 30)) {
+        weightElement.innerText = (`WOW! The ${pokemon.name} has a considerable weight of ${pokemon.weight} kg!`);
+      } else {
+        weightElement.innerText = (`SWEET! The ${pokemon.name} has a rather light weight of ${pokemon.weight} kg!`);
+      }
 
       modal.appendChild(closeButtonElement);
       modal.appendChild(titleElement);
