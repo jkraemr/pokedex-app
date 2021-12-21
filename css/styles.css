@@ -8,10 +8,6 @@
   --bg-color__04: darkblue;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 html {
   height: 100%;
   overflow: hidden;
