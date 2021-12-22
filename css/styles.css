@@ -17,9 +17,12 @@ body {
   font-family: 'Changa', sans-serif;
   /* margin: 1em; */
   background-image: var(--bg-color__01);
-  color: var(--color__02);
   height: 100%;
   overflow: hidden;
+}
+
+#modalContainer h1 {
+  text-transform: capitalize;
 }
 
 ol, ul {
@@ -76,54 +79,8 @@ ol, ul {
   overflow: scroll;
 }
 
-#modal-container {
-  position: fixed;
-  padding: 20px;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 400;
-  overflow: auto;
-  text-align: center;
-  display: none;
-}
-
-#modal-container.is-visible {
-  display: block;
-}
-
-.modal {
-  margin: 10% auto;
-  display: inline-block;
-  box-sizing: border-box;
-  background: #591ee1;
-  color: var(--color__02);
-  padding: 15px;
-  width: 100%;
-  height: 50%;
-  max-width: 700px;
-  text-align: left;
-}
-
-.modal-close {
-  float: right;
-  /* -webkit-appearance: none; */
-  border: 0;
-  background: none;
-  color: #777;
-  text-decoration: underline;
-}
-
-.modal h1 {
-  margin-top: 0;
+.btn {
   text-transform: capitalize;
-}
-
-button.modal-close {
-  color: #fff;
 }
 
 @media all and (max-width: 500px) {
