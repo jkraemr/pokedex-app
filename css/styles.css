@@ -25,12 +25,7 @@ body {
 ol, ul {
   font-size: 1.08em;
   line-height: 1.8em;
-  /* display: inline-block; */
-  /* list-style: hiragana; */
-}
-
-li {
-  display: inline-block;
+  list-style-type: none;
 }
 
 .page-header {
@@ -129,24 +124,6 @@ li {
 
 button.modal-close {
   color: #fff;
-}
-
-.button {
-  background-color: var(--color__02);
-  border: 3px solid var(--color__03);
-  border-radius: 45px;
-  margin: 19px;
-  padding: 33px;
-  color: var(--color__01);
-  cursor: pointer;
-  transition-duration: 0.08s;
-  text-transform: capitalize;
-}
-
-.button:hover {
-  /* background-image: var(--bg-color__01); */
-  background-color: var(--bg-color__02);
-  color: var(--color__02);
 }
 
 @media all and (max-width: 500px) {
