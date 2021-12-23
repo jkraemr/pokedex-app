@@ -111,7 +111,7 @@ let pokemonRepository = (function() {
 
   // Show loading message in document / console
   function showLoadingMessage() {
-    document.getElementById("loader").style.visibility = "visible";
+    document.getElementById('loader').style.visibility = 'visible';
     console.clear();
     console.log('LOADING data from PokeAPI ...');
   }
@@ -119,10 +119,10 @@ let pokemonRepository = (function() {
   // Hide loading message in document / console
   function hideLoadingMessage() {
     setTimeout(() => {
-      document.getElementById("loader").style.visibility = "hidden"
+      document.getElementById('loader').style.visibility = 'hidden'
     }, 500);
     setTimeout(() => {
-      console.log("DONE: Loading data successful.")
+      console.log('DONE: Loading data successful.')
     }, 1000);
   }
 
