@@ -27,7 +27,7 @@ let pokemonRepository = (function() {
     button.classList.add('btn-outline-primary');
 
     listItem.classList.add('flex-fill');
-    listItem.classList.add('p-1');
+    listItem.classList.add('p-2');
     listItem.appendChild(button);
 
     pokeList.appendChild(listItem);

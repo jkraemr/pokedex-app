@@ -2,6 +2,7 @@
   --color__01: darkblue;
   --color__02: #ffe23c;
   --color__03: #386BB9;
+  --color__04: #fff;
   --bg-color__01: radial-gradient(circle at 50% 120.71%, #503460 0, #43295d 25%, #321f59 50%, #1c1656 75%, #000f53 100%);
   --bg-color__02: rgba(0, 0, 0, 0.1);
   --bg-color__03: aquamarine;
@@ -9,8 +10,8 @@
 }
 
 html {
-  height: 100%;
-  overflow: hidden;
+  height: 87%;
+  overflow: visible;
 }
 
 body {
@@ -25,10 +26,8 @@ body {
   text-transform: capitalize;
 }
 
-ol, ul {
-  font-size: 1.08em;
-  line-height: 1.8em;
-  list-style-type: none;
+.bg-transparent {
+  margin: 0 2.5%;
 }
 
 .page-header {
@@ -41,13 +40,15 @@ ol, ul {
 }
 
 .page-header__logo-2 {
-  max-width: 250px;
+  max-width: 220px;
+  margin: 8% 0 0 11%;
 }
 
 .page-title {
   font-family: 'Sedgwick Ave Display', cursive;
   color: var(--color__02);
   font-size: 1.4em;
+  text-align: left;
   margin: 8px 6px 0px;
 }
 
@@ -79,13 +80,29 @@ ol, ul {
   overflow: scroll;
 }
 
+ol, ul {
+  font-size: 1.08em;
+  line-height: 1.8em;
+  list-style-type: none;
+}
+
 .btn {
   text-transform: capitalize;
+  color: var(--color__04);
 }
 
 @media all and (max-width: 500px) {
-  body {
+
+  html {
+    height: 77%;
+    overflow: visible;
+  }
+
+  /* body {
     margin: 20px;
+  } */
+  .navbar-dark .navbar-toggler {
+    margin: 0 auto;
   }
 
   .page-header__logo-1 {
@@ -94,8 +111,9 @@ ol, ul {
   }
 
   .page-header__logo-2 {
-    max-width: 70%;
+    max-width: 50%;
     min-width: 100px;
+    margin-bottom: 3%;
   }
 
   .page-title {
@@ -103,7 +121,6 @@ ol, ul {
   }
 
   .main-content {
-    border-radius: 18px;
     font-size: smaller;
   }
 }
