@@ -24,9 +24,9 @@ let pokemonRepository = (function() {
     button.setAttribute('data-toggle', 'modal');
     button.setAttribute('data-target', '#modalContainer');
     button.classList.add('btn');
-    button.classList.add('btn-outline-primary');
+    button.classList.add('btn-primary');
 
-    listItem.classList.add('flex-fill');
+    // listItem.classList.add('flex-fill');
     listItem.classList.add('p-2');
     listItem.appendChild(button);
 
@@ -68,6 +68,7 @@ let pokemonRepository = (function() {
 
       item.imageUrl = details.sprites.front_default;
       item.weight = details.weight;
+      item.height = details.height;
       item.types = details.types;
 
     }).catch(function(e) {
@@ -94,17 +95,25 @@ let pokemonRepository = (function() {
     let imageElement = document.createElement('img');
     imageElement.src = (pokemon.imageUrl);
     let weightElement = document.createElement('p');
+    let heightElement = document.createElement('p');
+    let typesElement = $(`<p> Type/s : ${pokemon.types.map(p => p.type.name).join(', ')}</p>`);
+
     if (pokemon.weight > 500) {
-      weightElement.innerText = (`OMG – That's a massive one. BEWARE: The mighty ${pokemon.name} weights ${pokemon.weight} kg!`);
+      weightElement.innerHTML = ('OMG – That\'s a massive one. BEWARE: The mighty ' + '<span style="text-transform:capitalize">' + pokemon.name + '</span> ' + ' weights ' + pokemon.weight + ' hectograms!');
     } else if ((pokemon.weight <= 500) && (pokemon.weight >= 30)) {
-      weightElement.innerText = (`WOW! The ${pokemon.name} has a considerable weight of ${pokemon.weight} kg!`);
+      weightElement.innerHTML = ('WOW! The ' + '<span style="text-transform:capitalize">' + pokemon.name + '</span> ' + 'has a considerable weight of ' + pokemon.weight + ' hectograms!');
     } else {
-      weightElement.innerText = (`HOW CUTE! The ${pokemon.name} has a rather light weight of ${pokemon.weight} kg!`);
+      weightElement.innerHTML = ('HOW CUTE! The ' + '<span style="text-transform:capitalize">' + pokemon.name + '</span> ' + ' has a rather light weight of ' + pokemon.weight + ' hectograms!');
     }
+
+    heightElement.innerText = ('Height: ' + pokemon.height + ' decimetres');
+
 
     modalTitle.append(nameElement);
     modalBody.append(imageElement);
     modalBody.append(weightElement);
+    modalBody.append(heightElement);
+    modalBody.append(typesElement);
 
   }
 
