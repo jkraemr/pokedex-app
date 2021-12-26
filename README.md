@@ -6,11 +6,7 @@ Small web application with HTML, CSS, and JavaScript that loads a list of data f
 
 * Load data from an external source (RESTful PokeAPI v2)
 * View a list of items (Pokemon)
-* View details for that item on user action (e.g., by clicking on a list item):
-** Image
-** Height
-** Weight
-** Types
+* View details for that item on user action (e.g., by clicking on a list item): Image, Height, Weight, Types
 
 ## Built with
 * HTML5
@@ -38,4 +34,5 @@ Small web application with HTML, CSS, and JavaScript that loads a list of data f
   }
 }
 `
+
 This project was built as part of the CareerFoundry Full-Stack Web Development Program / Achievement 1 / Introduction to JavaScript.
