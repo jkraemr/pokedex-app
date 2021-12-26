@@ -1,7 +1,7 @@
 :root {
   --color__01: darkblue;
   --color__02: #ffe23c;
-  --color__03: #386BB9;
+  --color__03: #386bb9;
   --color__04: #fff;
   --bg-color__01: radial-gradient(circle at 50% 120.71%, #503460 0, #43295d 25%, #321f59 50%, #1c1656 75%, #000f53 100%);
   --bg-color__02: rgba(0, 0, 0, 0.1);
@@ -16,16 +16,28 @@ html {
 
 body {
   font-family: 'Changa', sans-serif;
-  /* margin: 1em; */
   background-image: var(--bg-color__01);
   height: 100%;
   overflow: hidden;
+}
+
+.modal-backdrop {
+  z-index: 400;
 }
 
 #modalContainer h1 {
   text-transform: capitalize;
 }
 
+.modal-body img {
+  background-image: var(--bg-color__01);
+  border-radius: 50%;
+  width: 40%;
+  padding: 4%;
+  margin-bottom: 10%;
+}
+
+/* header nav */
 .bg-transparent {
   margin: 0 2.5%;
 }
@@ -40,8 +52,10 @@ body {
 }
 
 .page-header__logo-2 {
+  /* position: relative;
+  z-index: 600; */
   max-width: 220px;
-  margin: 8% 0 0 11%;
+  margin-top: 8%;
 }
 
 .page-title {
@@ -49,7 +63,7 @@ body {
   color: var(--color__02);
   font-size: 1.4em;
   text-align: left;
-  margin: 8px 6px 0px;
+  margin: 8px 6px 0;
 }
 
 #loader {
@@ -59,7 +73,7 @@ body {
   right: 0;
   left: 0;
   background-color: var(--bg-color__03);
-  height: 40px;
+  height: 25px;
   color: var(--color__01);
 }
 
@@ -80,27 +94,27 @@ body {
   overflow: scroll;
 }
 
-ol, ul {
+ol,
+ul {
   font-size: 1.08em;
   line-height: 1.8em;
   list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  flex-basis: 20%;
+  flex-grow: 1;
 }
 
 .btn {
   text-transform: capitalize;
-  color: var(--color__04);
+  font-size: 1em;
+  width: 100%;
 }
 
 @media all and (max-width: 500px) {
-
-  html {
-    height: 77%;
-    overflow: visible;
-  }
-
-  /* body {
-    margin: 20px;
-  } */
   .navbar-dark .navbar-toggler {
     margin: 0 auto;
   }
@@ -122,5 +136,33 @@ ol, ul {
 
   .main-content {
     font-size: smaller;
+  }
+
+  #modalContainer h1 {
+    font-size: 2em;
+  }
+
+  li {
+    flex-basis: 50%;
+    flex-grow: 2;
+  }
+
+  .btn {
+    font-size: 1em;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 300px) {
+  .modal-body img {
+    width: 50%;
+  }
+
+  #modalContainer h1 {
+    font-size: 1.3em;
+  }
+
+  .btn {
+    font-size: 0.7em;
   }
 }
