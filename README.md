@@ -36,3 +36,7 @@ Small web application with HTML, CSS, and JavaScript that loads a list of data f
 `
 
 This project was built as part of the CareerFoundry Full-Stack Web Development Program / Achievement 1 / Introduction to JavaScript.
+
+## Acknowledgements
+
+This project has been built as part of the mentored CareerFoundry Full-Stack Web Development Program: https://careerfoundry.com/en/courses/become-a-web-developer/
