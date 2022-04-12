@@ -1,6 +1,6 @@
 # Pokedex App
 
-Small web application with HTML, CSS, and JavaScript that loads a list of data from an external/public API and enables the viewing of more details for a given data item on demand.
+Small web application built with HTML, CSS, and JavaScript that loads a list of data from an external/public API and enables the viewing of more details for a given data item on demand.
 
 ### Key Features
 
