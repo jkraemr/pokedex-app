@@ -2,7 +2,7 @@
 
 Small web application built with HTML, CSS, and JavaScript that loads a list of data from an external/public API and enables the viewing of more details for a given data item on demand.
 
-### Key Features
+## Key Features
 
 * Load data from an external source (RESTful PokeAPI v2)
 * View a list of items (Pokemon)
